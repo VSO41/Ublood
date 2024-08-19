@@ -1,0 +1,110 @@
+body {
+    background-color: #686b6a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-container {
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.profile-page .logo {
+    display: none;
+}
+
+#user-info {
+    margin-top: 20px;
+}
+
+#username-info, #blood-type-info {
+    margin: 3px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#info-box {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#info-box h2 {
+    margin-top: 0;
+}
+
+.floating-panels-container {
+    margin-left: 327px;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 320px);
+    height: 100%;
+    align-items: flex-start; /* Alinha os painéis ao topo */
+    padding-top: 50px; /* Espaço acima dos painéis */
+}
+
+.floating-panels {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que os painéis ocupem a linha de baixo se o espaço não for suficiente */
+}
+
+.panel {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panel-number {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
