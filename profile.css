@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden; /* Remove a rolagem do body */
 }
 
 .profile-container {
@@ -18,8 +19,19 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    height: 100%;
-    overflow-y: auto;
+    height: 100%; /* Altura total menos o espaço para o rodapé */
+    overflow: hidden; /* Remove a rolagem dentro do perfil */
+    display: flex;
+    flex-direction: column; /* Permite alinhar o botão ao final */
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-small {
+    width: 200px; /* Ajuste o tamanho da logo pequena conforme necessário */
+    margin-bottom: 0px; /* Espaço entre a logo e o título */
 }
 
 .profile-page .logo {
@@ -28,6 +40,8 @@ body {
 
 #user-info {
     margin-top: 20px;
+    flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+    overflow: hidden; /* Remove a rolagem dentro do conteúdo do usuário */
 }
 
 #username-info, #blood-type-info {
@@ -45,10 +59,12 @@ button {
     width: 100%;
     background-color: #28a745;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     color: white;
     cursor: pointer;
-    margin: 10px 0;
+    position: absolute; /* Permite o posicionamento absoluto */
+    bottom: 68px; /* Distância da borda inferior, ajustada para deixar espaço para o rodapé */
+    left: 0; /* Alinha ao lado esquerdo da container */
 }
 
 button:hover {
@@ -60,7 +76,7 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 530px;
     text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -74,17 +90,18 @@ button:hover {
     display: flex;
     justify-content: center;
     width: calc(100% - 320px);
-    height: 100%;
+    height: calc(100vh - 80px); /* Ajusta a altura para garantir que os painéis não causem rolagem */
     align-items: flex-start; /* Alinha os painéis ao topo */
-    padding-top: 50px; /* Espaço acima dos painéis */
+    padding-top: 10px; /* Espaço acima dos painéis */
+    overflow: hidden; /* Remove a rolagem dentro do container de painéis flutuantes */
 }
 
 .floating-panels {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 35px;
     flex-direction: row;
-    flex-wrap: wrap; /* Permite que os painéis ocupem a linha de baixo se o espaço não for suficiente */
+    flex-wrap: nowrap; /* Impede que os painéis quebrem linha */
 }
 
 .panel {
@@ -94,9 +111,9 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;
-    height: 300px;
+    height: 200px;
     text-align: center;
-    overflow: auto;
+    overflow: hidden; /* Remove a rolagem dentro dos painéis */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,4 +124,51 @@ button:hover {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 10px;
+}
+
+.panel-content {
+    font-size: 16px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #481A15;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Fixa o rodapé na parte inferior da tela */
+    bottom: -5px;
+    width: 100%; /* Largura ajustada para o rodapé ocupar o restante da tela */
+    left: 0px; /* Alinha o rodapé com o início da área de conteúdo */
+    margin-top: 60px; /* Espaço acima do rodapé para garantir que ele não encoste no painel do usuário */
+}
+
+.footer-content {
+    max-width: 1000px; /* Ajusta a largura máxima para manter o rodapé pequeno */
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
 }
