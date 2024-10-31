@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ublood</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" type="imagex/png" href="teste.png">
+</head>
+<body>
+    <div class="container">
+        <img src="Logo.png" alt="Logo" class="logo"> <!-- Logo adicionada aqui -->
+        <h1>Selecione seu Tipo Sanguíneo:</h1>
+        <div id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p>Não tem uma conta? <a href="#" onclick="showRegisterForm()">Registrar</a></p>
+        </div>
+        <div id="register-form" style="display:none;">
+            <h2>Registro</h2>
+            <input type="text" id="new-username" placeholder="Novo Usuário">
+            <input type="password" id="new-password" placeholder="Nova Senha">
+            <select id="blood-type">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <button onclick="register()">Registrar</button>
+            <p>Já tem uma conta? <a href="#" onclick="showLoginForm()">Login</a></p>
+        </div>
+        <div id="profile" style="display:none;">
+            <h2>Perfil</h2>
+            <p id="welcome-message"></p>
+            <p id="blood-type-description"></p>
+            <button onclick="logout()">Sair</button>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

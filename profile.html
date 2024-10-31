@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="shortcut icon" type="imagex/png" href="teste.png">
+</head>
+<body>
+    <div class="profile-container profile-page">
+        <div class="logo-container">
+            <img src="Logo.png" alt="Logo Pequena" class="logo-small">
+        </div>
+        <h1>Perfil</h1>
+        <div id="user-info">
+            <p id="username-info">Usuário: João</p>
+            <p id="blood-type-info">Tipo Sanguíneo: O+</p>
+            <div id="info-box">
+                <h2>Doadores e Receptores</h2>
+                <p id="donors-info">Doadores: O+, O-</p>
+                <p id="receivers-info">Receptores: O+, A+, B+, AB+</p>
+            </div>
+            <button onclick="logout()">Sair</button>
+        </div>
+    </div>
+    <div class="floating-panels-container">
+        <div class="floating-panels">
+            <div id="panel-1" class="panel">
+                <div class="panel-number">Painel 1</div>
+                <div class="panel-content">Informação do Painel 1: Texto estático que será exibido para todos os usuários.</div>
+            </div>
+            <div id="panel-2" class="panel">
+                <div class="panel-number">Painel 2</div>
+                <div class="panel-content">Informação do Painel 2: Detalhes adicionais sobre o tipo sanguíneo e outras informações.</div>
+            </div>
+            <div id="panel-3" class="panel">
+                <div class="panel-number">Painel 3</div>
+                <div class="panel-content">Informação do Painel 3: Mais informações que são relevantes para o usuário.</div>
+            </div>
+            <div id="panel-4" class="panel">
+                <div class="panel-number">Painel 4</div>
+                <div class="panel-content">Informação do Painel 4: Dados importantes que precisam ser mostrados aqui.</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Ublood - Fevem. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="profile.js"></script>
+</body>
+</html>
