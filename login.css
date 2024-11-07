@@ -55,3 +55,10 @@ button:hover {
 h1, h2 {
     margin-bottom: 20px;
 }
+#hemocentro {
+    width: 75%;
+    background-color: #481A15;
+}
+#hemocentro:hover {
+    background-color: #33120e;
+}
