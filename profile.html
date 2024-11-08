@@ -44,6 +44,24 @@
             </div>
         </div>
     </div>
+        <div id="calendar" style="height: 500px; margin-top: 20px;"></div>
+        <div class="form-container">
+        <label for="gender">Selecione seu gênero:</label>
+        <select id="gender">
+            <option value="homem">Homem</option>
+            <option value="mulher">Mulher</option>
+        </select>
+
+        <label for="lastDonation">Data da última doação de sangue:</label>
+        <input type="date" id="lastDonation">
+
+        <button name="Calc" id="ProxCalc" onclick="calcularProximasDoacoes()">Calcular Próximas Doações</button>
+    </div>
+
+    <div id="resultado"></div>
+
+        
+
     <footer>
         <div class="footer-content">
             <p>© 2024 Ublood - Fevem. Todos os direitos reservados.</p>

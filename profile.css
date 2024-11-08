@@ -1,250 +1,226 @@
-    /* CSS padrão para desktops */
-    body {
-        background-color: #686b6a;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        overflow: hidden; /* Remove a rolagem do body */
-    }
-
-    .profile-container {
-        background: white;
-        padding: 20px;
-        border-radius: 0px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        text-align: center;
-        position: fixed;
-        left: 0;
-        top: 0;
-        height: 100%;
-        overflow: hidden; /* Remove a rolagem dentro do perfil */
-        display: flex;
-        flex-direction: column; /* Permite alinhar o botão ao final */
-    }
-
-    .logo-container {
-        text-align: center;
-    }
-
-    .logo-small {
-        width: 200px; /* Ajuste o tamanho da logo pequena conforme necessário */
-        margin-bottom: 0px; /* Espaço entre a logo e o título */
-    }
-
-    .profile-page .logo {
-        display: none;
-    }
-
-    #user-info {
-        margin-top: 20px;
-        flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
-        overflow: hidden; /* Remove a rolagem dentro do conteúdo do usuário */
-    }
-
-    #username-info, #blood-type-info {
-        margin: 3px 0;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    h1 {
-        margin-bottom: 20px;
-    }
-
-    button {
-        padding: 10px;
-        width: 100%;
-        background-color: #28a745;
-        border: none;
-        border-radius: 0px;
-        color: white;
-        cursor: pointer;
-        position: absolute; /* Permite o posicionamento absoluto */
-        bottom: 68px; /* Distância da borda inferior, ajustada para deixar espaço para o rodapé */
-        left: 0; /* Alinha ao lado esquerdo da container */
-    }
-
-    button:hover {
-        background-color: #218838;
-    }
-
-    #info-box {
-        background: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 50px;
-        text-align: center;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    #info-box h2 {
-        margin-top: 0;
-    }
-
-    .floating-panels-container {
-        margin-left: 320px;
-        display: flex;
-        justify-content: center;
-        width: calc(100% - 320px);
-        height: calc(100vh - 80px); /* Ajusta a altura para garantir que os painéis não causem rolagem */
-        align-items: flex-start; /* Alinha os painéis ao topo */
-        padding-top: 10px; /* Espaço acima dos painéis */
-        overflow: hidden; /* Remove a rolagem dentro do container de painéis flutuantes */
-        max-width: 100%;
-    }
-
-    .floating-panels {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-direction: row;
-        flex-wrap: wrap; /* Impede que os painéis quebrem linha */
-    }
-
-    .panel {
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 300px;
-        height: 200px;
-        text-align: center;
-        overflow: hidden; /* Remove a rolagem dentro dos painéis */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        max-width: 100%;
-    }
-
-    .panel-number {
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .panel-content {
-        font-size: 16px;
-    }
-
-    /* Rodapé */
-    footer {
-        background-color: #481A15;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        position: fixed; /* Fixa o rodapé na parte inferior da tela */
-        bottom: -5px;
-        width: 100%; /* Largura ajustada para o rodapé ocupar o restante da tela */
-        left: 0px; /* Alinha o rodapé com o início da área de conteúdo */
-        margin-top: 60px; /* Espaço acima do rodapé para garantir que ele não encoste no painel do usuário */
-    }
-
-    .footer-content {
-        max-width: 1000px; /* Ajusta a largura máxima para manter o rodapé pequeno */
-        margin: 0 auto;
-    }
-
-    footer p {
-        margin: 0;
-        font-size: 14px;
-    }
-
-    footer nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 10px 0 0;
-    }
-
-    footer nav ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    footer nav ul li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    footer nav ul li a:hover {
-        text-decoration: underline;
-    }
-
-   /* Responsividade para painéis flutuantes */
-@media (max-width: 1200px) {
-    .floating-panels-container {
-        margin-left: 300px;
-        width: calc(100% - 290px);
-    }
+body {
+    background-color: #686b6a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Remove a rolagem do body */
 }
 
-@media (max-width: 992px) {
-    .profile-container {
-        width: 250px;
-    }
-
-    .floating-panels-container {
-        margin-left: 270px;
-        width: calc(100% - 260px);
-    }
+.profile-container {
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%; /* Altura total menos o espaço para o rodapé */
+    overflow: hidden; /* Remove a rolagem dentro do perfil */
+    display: flex;
+    flex-direction: column; /* Permite alinhar o botão ao final */
 }
 
-@media (max-width: 768px) {
-    .profile-container {
-        width: 200px;
-    }
-
-    .floating-panels-container {
-        margin-left: 220px;
-        width: calc(100% - 210px);
-        height: calc(100vh - 60px);
-    }
-
-    .floating-panels {
-        gap: 20px; /* Ajuste o espaçamento entre os painéis */
-    }
-
-    #info-box {
-        margin-top: 400px;
-    }
-
-    footer {
-        padding: 5px 0;
-        font-size: 12px;
-    }
+.logo-container {
+    text-align: center;
 }
 
-@media (max-width: 576px) {
-    .profile-container {
-        width: 100%;
-        position: relative;
-        height: auto;
-    }
-
-    .floating-panels-container {
-        margin-left: 0;
-        width: 100%;
-        height: auto;
-        padding-top: 20px;
-    }
-
-    .floating-panels {
-        flex-direction: column;
-        gap: 20px; /* Ajuste o espaçamento entre os painéis para dispositivos móveis */
-    }
-
-    .panel {
-        width: 100%;
-        height: auto;
-    }
-
-    footer {
-        padding: 10px;
-    }
+.logo-small {
+    width: 200px; /* Ajuste o tamanho da logo pequena conforme necessário */
+    margin-bottom: 0px; /* Espaço entre a logo e o título */
 }
+
+.profile-page .logo {
+    display: none;
+}
+
+#user-info {
+    margin-top: 20px;
+    flex-grow: 1; /* Faz com que o conteúdo principal ocupe o espaço disponível */
+    overflow: hidden; /* Remove a rolagem dentro do conteúdo do usuário */
+}
+
+#username-info, #blood-type-info {
+    margin: 3px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    cursor: pointer;
+    position: absolute; /* Permite o posicionamento absoluto */
+    bottom: 68px; /* Distância da borda inferior, ajustada para deixar espaço para o rodapé */
+    left: 0; /* Alinha ao lado esquerdo da container */
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#info-box {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 530px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#info-box h2 {
+    margin-top: 0;
+}
+
+.floating-panels-container {
+    margin-left: 327px;
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 320px);
+    height: calc(100vh - 80px); /* Ajusta a altura para garantir que os painéis não causem rolagem */
+    align-items: flex-start; /* Alinha os painéis ao topo */
+    padding-top: 10px; /* Espaço acima dos painéis */
+    overflow: hidden; /* Remove a rolagem dentro do container de painéis flutuantes */
+}
+
+.floating-panels {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Impede que os painéis quebrem linha */
+}
+
+.panel {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    overflow: hidden; /* Remove a rolagem dentro dos painéis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #481A15;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Fixa o rodapé na parte inferior da tela */
+    bottom: -5px;
+    width: 100%; /* Largura ajustada para o rodapé ocupar o restante da tela */
+    left: 0px; /* Alinha o rodapé com o início da área de conteúdo */
+    margin-top: 60px; /* Espaço acima do rodapé para garantir que ele não encoste no painel do usuário */
+}
+
+.footer-content {
+    max-width: 1000px; /* Ajusta a largura máxima para manter o rodapé pequeno */
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
+}
+    #calendar {
+    position: absolute; 
+    left: 38.93%; 
+    top: 57%; 
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 682.35px;
+}
+ .form-container {
+    position: absolute; 
+    left: 38.93%; 
+    top: 35.5%; 
+    text-align: center;
+    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
+    font-size: 20px;
+ }
+
+ #resultado {
+    position: absolute; 
+    left: 38.93%; 
+    top: 65%; 
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 500px;
+    height: 300px;
+ }
+  #lastDonation {
+    font-size: 13px;
+
+  }
+  #gender {
+    font-size: 14px;
+  }
+  #ProxCalc{ /* Botão de calcular próximas doações */
+    display: flex;    
+    position: absolute; 
+    left: 50%; 
+    top: 64.5px; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #481A15;
+    border-radius: 30px;
+    width: 300px;
+
+  }

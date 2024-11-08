@@ -3,30 +3,30 @@ const bloodTypeDetails = {
         donors: ["A+", "AB+"],
         receivers: ["A+", "A-", "O+", "O-"],
         panels: {
-            panel1: "Painel 1: Você pode doar para A+ e AB+.",
-            panel2: "Painel 2: Receba sangue de A+, A-, O+, O-.",
-            panel3: "Painel 3: Evite situações de estresse elevado.",
-            panel4: "Painel 4: Participar de campanhas de doação é importante."
+            panel1: "Pessoas com sangue tipo A+ têm anticorpos contra o sangue tipo B, o que significa que não são compatíveis. ",
+            panel2: "No Brasil, o sangue tipo A+ é um dos mais comuns, representando cerca de 42% da população.",
+            panel3: "Evite situações de estresse elevado.",
+            panel4: "Participar de campanhas de doação é importante."
         }
     },
     "A-": {
         donors: ["A+", "A-", "AB+", "AB-"],
         receivers: ["A-", "O-"],
         panels: {
-            panel1: "Painel 1: Seu sangue é raro, valorize sua doação.",
-            panel2: "Painel 2: Pode receber de A- e O-.",
-            panel3: "Painel 3: Considere uma dieta rica em ferro.",
-            panel4: "Painel 4: Incentive outras pessoas a doarem sangue."
+            panel1: "No Brasil, o sangue tipo A é um dos mais comuns, representando cerca de 42% da população.",
+            panel2: "Pode ser uma preocupação em gestações quando a mãe tem Rh negativo e o feto tem Rh positivo, pois pode haver risco de incompatibilidade Rh.",
+            panel3: "Considere uma dieta rica em ferro.",
+            panel4: "Incentive outras pessoas a doarem sangue."
         }
     },
     "B+": {
         donors: ["B+", "AB+"],
         receivers: ["B+", "B-", "O+", "O-"],
         panels: {
-            panel1: "Painel 1: Pode doar para B+ e AB+.",
-            panel2: "Painel 2: Receba sangue de B+, B-, O+, O-.",
-            panel3: "Painel 3: Mantenha-se ativo fisicamente.",
-            panel4: "Painel 4: Participe de maratonas de doação de sangue."
+            panel1: "Pode doar para B+ e AB+.",
+            panel2: "Receba sangue de B+, B-, O+, O-.",
+            panel3: "Mantenha-se ativo fisicamente.",
+            panel4: "Participe de maratonas de doação de sangue."
         }
     },
     // Adicione os demais tipos sanguíneos da mesma forma
@@ -34,20 +34,20 @@ const bloodTypeDetails = {
         donors: ["O+", "A+", "B+", "AB+"],
         receivers: ["O+", "O-"],
         panels: {
-            panel1: "Painel 1: Você pode doar para todos os tipos positivos.",
-            panel2: "Painel 2: Pode receber de O+ e O-.",
-            panel3: "Painel 3: Hidratação é chave para sua saúde.",
-            panel4: "Painel 4: Lembre-se de doar sangue regularmente."
+            panel1: "Você pode doar para todos os tipos positivos.",
+            panel2: "Pode receber de O+ e O-.",
+            panel3: "Hidratação é chave para sua saúde.",
+            panel4: "Lembre-se de doar sangue regularmente."
         }
     },
     "O-": {
         donors: ["O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-"],
         receivers: ["O-"],
         panels: {
-            panel1: "Painel 1: Seu sangue é universal, pode doar para todos.",
-            panel2: "Painel 2: Receba apenas de O-.",
-            panel3: "Painel 3: Manter uma dieta balanceada é essencial.",
-            panel4: "Painel 4: Sua doação é extremamente valiosa."
+            panel1: "Seu sangue é universal, pode doar para todos.",
+            panel2: "Receba apenas de O-.",
+            panel3: "Manter uma dieta balanceada é essencial.",
+            panel4: "Sua doação é extremamente valiosa."
         }
     },
     // Adicione os outros tipos sanguíneos como necessário
@@ -92,3 +92,34 @@ function logout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = 'login.html';
 }
+
+function calcularProximasDoacoes() {
+            const gender = document.getElementById('gender').value;
+            const lastDonation = new Date(document.getElementById('lastDonation').value);
+            const resultado = document.getElementById('resultado');
+
+            if (isNaN(lastDonation.getTime())) {
+                resultado.innerHTML = "Por favor, insira uma data válida.";
+                return;
+            }
+
+            resultado.innerHTML = "<h3>Próximas datas de doação:</h3>";
+            const dates = [];
+            let interval, maxDoacoes;
+
+            if (gender === "homem") {
+                interval = 60; // 2 meses em dias
+                maxDoacoes = 4;
+            } else {
+                interval = 90; // 3 meses em dias
+                maxDoacoes = 3;
+            }
+
+            for (let i = 1; i <= maxDoacoes; i++) {
+                const nextDate = new Date(lastDonation);
+                nextDate.setDate(lastDonation.getDate() + interval * i);
+                dates.push(nextDate.toLocaleDateString('pt-BR'));
+            }
+
+            resultado.innerHTML += dates.join('<br>');
+        }
